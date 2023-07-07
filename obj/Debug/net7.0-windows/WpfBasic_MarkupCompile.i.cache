@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\Apps\WPF\wpf\obj\Debug\net7.0-windows\
+C:\Users\minhg\Downloads\Projects\NET\WPF\WpfBasic\obj\Debug\net7.0-windows\
 WpfBasic
 none
 false
 TRACE;DEBUG;NET;NET7_0;NETCOREAPP
-D:\Apps\WPF\wpf\App.xaml
+C:\Users\minhg\Downloads\Projects\NET\WPF\WpfBasic\App.xaml
 21940794329
 
-7-636492232
-1981911467256
+15155355990
+199934136691
 MainWindow.xaml;Window1.xaml;
 
-False
+True
 

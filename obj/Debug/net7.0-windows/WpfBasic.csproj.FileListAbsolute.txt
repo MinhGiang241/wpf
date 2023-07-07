@@ -42,3 +42,7 @@ D:\Apps\WPF\wpf\obj\Debug\net7.0-windows\refint\WpfBasic.dll
 D:\Apps\WPF\wpf\obj\Debug\net7.0-windows\WpfBasic.pdb
 D:\Apps\WPF\wpf\obj\Debug\net7.0-windows\WpfBasic.genruntimeconfig.cache
 D:\Apps\WPF\wpf\obj\Debug\net7.0-windows\ref\WpfBasic.dll
+C:\Users\minhg\Downloads\Projects\NET\WPF\WpfBasic\obj\Debug\net7.0-windows\Window1.g.cs
+C:\Users\minhg\Downloads\Projects\NET\WPF\WpfBasic\obj\Debug\net7.0-windows\Window1.baml
+C:\Users\minhg\Downloads\Projects\NET\WPF\WpfBasic\obj\Debug\net7.0-windows\WpfBasic.csproj.Fody.CopyLocal.cache
+C:\Users\minhg\Downloads\Projects\NET\WPF\WpfBasic\obj\Debug\net7.0-windows\WpfBasic.csproj.Fody.RuntimeCopyLocal.cache

@@ -5,17 +5,30 @@ using System.Windows.Media.Imaging;
 
 namespace WpfBasic
 {
-    [ValueConversion(typeof(string), typeof(BitmapImage))]
+    [ValueConversion(typeof(DirectoryItemType), typeof(BitmapImage))]
     public class HeaderToImageConverter : IValueConverter
     {
 
         public static HeaderToImageConverter Instance = new HeaderToImageConverter();
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            var path = (string)value;
 
-            if (path == null) return null;
             var image = "Images/drive.png";
+
+            switch ((DirectoryItemType)value)
+            {
+                case DirectoryItemType.Drive:
+                    image = "Images/drive.png";
+                    break;
+                case DirectoryItemType.Folder:
+                    image = "Images/folder-closed.png";
+                    break;
+                case DirectoryItemType.File:
+                    image = "Images/file.png";
+                    break;
+
+            }
+
             return new BitmapImage(new Uri($"pack://application:,,,/{image}"));
         }
 
