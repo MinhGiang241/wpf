@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\minhg\\Downloads\\Projects\\NET\\WPF\\WpfBasic\\WpfBasic.csproj",
+      "projectUniqueName": "D:\\Apps\\WPF\\wpf\\WpfBasic.csproj",
       "projectName": "WpfBasic",
-      "projectPath": "C:\\Users\\minhg\\Downloads\\Projects\\NET\\WPF\\WpfBasic\\WpfBasic.csproj",
+      "projectPath": "D:\\Apps\\WPF\\wpf\\WpfBasic.csproj",
       "packagesPath": "C:\\Users\\minhg\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\minhg\\Downloads\\Projects\\NET\\WPF\\WpfBasic\\obj\\",
+      "outputPath": "D:\\Apps\\WPF\\wpf\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\minhg\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -64,7 +64,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
       }
     }
   }
