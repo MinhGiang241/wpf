@@ -87,16 +87,11 @@
                     <Grid>
 
                         <Border x:Name="border" 
-                                Background="{TemplateBinding Background}" 
                                 BorderBrush="{TemplateBinding BorderBrush}" 
-                                BorderThickness="{TemplateBinding BorderThickness}" 
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                Background="{TemplateBinding Background}"
                                 SnapsToDevicePixels="True">
-                            
-                            
-                            <ScrollViewer x:Name="PART_ContentHost" 
-                                          Focusable="false" 
-                                          HorizontalScrollBarVisibility="Hidden"
-                                          VerticalScrollBarVisibility="Hidden"/>
+                            <ScrollViewer x:Name="PART_ContentHost" Focusable="False" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden"/>
                         </Border>
 
                         <TextBlock IsHitTestVisible="False"
@@ -104,24 +99,13 @@
                                    x:Name="placeholder"
                                    FontFamily="{StaticResource LatoThin}"
                                    Padding="{TemplateBinding Padding}"
-                                   Visibility="{TemplateBinding local:HasTextProperty.Value}"
+                                Visibility="{TemplateBinding local:HasTextProperty.Value, Converter={local:BooleanToVisiblityConverter}}"   
                                    VerticalAlignment="Center"
                                    HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
                                    Foreground="{StaticResource ForegrounDarkBrush}"
-                               
                                    >
-                            <TextBlock.Style>
-                                <Style TargetType="{x:Type TextBlock}">
-                                    <Setter Property="Visibility" Value="Collapsed" />
-                                    <Style.Triggers>
-                                        <DataTrigger Binding="{Binding (local:HasTextProperty.Value), RelativeSource={RelativeSource TemplatedParent}}" Value="False">
-                                            <Setter Property="Visibility" Value="Visible" />
-                                        </DataTrigger>
-                                    </Style.Triggers>
-                                </Style>
-                            </TextBlock.Style>
-
                         </TextBlock>
+
 
 
                     </Grid>

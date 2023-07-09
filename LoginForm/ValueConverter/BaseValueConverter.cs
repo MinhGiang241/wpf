@@ -6,25 +6,27 @@ using System.Windows.Markup;
 namespace LoginForm
 {
     /// <summary>
-    /// A base  Value converter that allow direct XAML usage
+    /// A base value converter that allows direct XAML usage
     /// </summary>
-    /// <typeparam name="T"></typeparam>
-    public abstract class BaseValueConverter<T> : MarkupExtension, IValueConverter where T : class, new()
-
+    /// <typeparam name="T">The type of this value converter</typeparam>
+    public abstract class BaseValueConverter<T> : MarkupExtension, IValueConverter
+        where T : class, new()
     {
-        #region Private Menmber
+        #region Private Members
 
         /// <summary>
-        /// A Single static instance of this valua converter
+        /// A single static instance of this value converter
         /// </summary>
-        private static T? mConverter;
+        private static T mConverter = null;
+
         #endregion
 
-        #region Markup Extension Method
+        #region Markup Extension Methods
+
         /// <summary>
-        /// provides a static insatance of the converter
+        /// Provides a static instance of the value converter 
         /// </summary>
-        /// <param name="serviceProvider"> The service provider</param>
+        /// <param name="serviceProvider">The service provider</param>
         /// <returns></returns>
         public override object ProvideValue(IServiceProvider serviceProvider)
         {
@@ -33,7 +35,7 @@ namespace LoginForm
 
         #endregion
 
-        #region Value Converter Method
+        #region Value Converter Methods
 
         /// <summary>
         /// The method to convert one type to another
@@ -45,9 +47,8 @@ namespace LoginForm
         /// <returns></returns>
         public abstract object Convert(object value, Type targetType, object parameter, CultureInfo culture);
 
-
         /// <summary>
-        /// The method to convert a value back  to Itt's source type
+        /// The method to convert a value back to it's source type
         /// </summary>
         /// <param name="value"></param>
         /// <param name="targetType"></param>
