@@ -7,19 +7,14 @@
       mc:Ignorable="d" 
       d:DesignHeight="700" d:DesignWidth="700"
       Title="LoginPage">
-    <Page.Resources>
-        <SolidColorBrush x:Key="TextBox.MouseOver.Border" Color="#FF7EB4EA"/>
-        <SolidColorBrush x:Key="TextBox.Focus.Border" Color="#FF569DE5"/>
-        
-    </Page.Resources>
-   
+
 
     <Border Background="{StaticResource WordBlueBrush}">
         <Grid>
             <Grid.Background>
                 <ImageBrush TileMode="Tile" ViewportUnits="Absolute" Viewport="0 0 500 500" ImageSource="pack:\\application:,,,/Images/Backgrounds/emoji-background.png"/>
             </Grid.Background>
-            <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+            <ScrollViewer  VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
                 <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" TextBlock.TextAlignment="Center">
                     <Border Background="{StaticResource ForegroundLightBrush}" CornerRadius="10" Padding="15 50 15 15" Width="400" Margin="50 50 50 0">
                         <StackPanel>
@@ -33,7 +28,7 @@
                             <!-- Email -->
                             <TextBox Tag="Email"/>
                             <!-- password-->
-                            <TextBox Tag="Password" Margin="0 0 0 30"/>
+                            <PasswordBox  Tag="Password" Margin="0 0 0 30"/>
 
                             <!-- Next button-->
                             <Button  Content="Next" HorizontalAlignment="Center"/>

@@ -3,6 +3,7 @@ using System.Windows.Input;
 
 namespace LoginForm
 {
+
     /// <summary>
     /// The View Model for the custom flat window
     /// </summary>
