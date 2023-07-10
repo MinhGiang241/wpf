@@ -139,6 +139,13 @@
                         FontFamily="{TemplateBinding FontFamily}"/>
                     </Border>
                     <ControlTemplate.Triggers>
+                        <EventTrigger RoutedEvent="MouseEnter">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <ColorAnimation To="{StaticResource WordBlue}" Duration="0:0:0.3" Storyboard.TargetName="border" Storyboard.TargetProperty="Background.Color"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
                         <Trigger Property="Button.IsDefaulted" Value="true">
                             <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
                         </Trigger>
