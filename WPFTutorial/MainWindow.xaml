@@ -6,26 +6,40 @@
         xmlns:local="clr-namespace:WPFTutorial"
         xmlns:userControls="clr-namespace:WPFTutorial.View.UserControls"
         mc:Ignorable="d"
-        Title="MainWindow" Height="300" Width="400">
+        x:Name="ResponsiveWindow"
+        Title="MainWindow" Height="700" Width="1350"
+        MinWidth="428"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        ResizeMode="CanResizeWithGrip"
+        WindowStartupLocation="CenterScreen"
+        Background="Transparent">
+
+    <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="BooleanTOVisibility"/>
+    </Window.Resources>
+    <Window.DataContext>
+        <local:MainViewModel/>
+    </Window.DataContext>
+
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="75" />
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
+        <Border Background="#282D33"
+                BorderBrush="#3A4149"
+                BorderThickness="5"
+                CornerRadius="8,8,0,8"/>
+        
+        
+        <!-- Reponsive layout-->
+        <ContentControl Content="{Binding}">
+            <ContentControl.Style>
+                <Style TargetType="ContentControl">
+                    <Setter Property="ContentTemplate"
+                               Value="{StaticResource Laptop_layout}"/>
+                </Style>
+            </ContentControl.Style>
+        </ContentControl>
 
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
 
-        <TextBox x:Name="txtEntry" Height="35" FontSize="16"/>
-        <Button Grid.Column="1" x:Name="btnAdd" Width="50" Content="Add" Click="btnAdd_Click" HorizontalAlignment="Left"/>
-        <Button Grid.Column="2" x:Name="btnDelete" Width="50" Content="Delete" Click="btnDelete_Click" HorizontalAlignment="Left" Margin="60,0,0,0"/>
-        <Button Grid.Column="3" x:Name="btnClear" Width="50" Content="Clear" Click="btnClear_Click" HorizontalAlignment="Right" Margin="60,0,0,0"/>
-
-        <ListView Grid.Row="1" 
-                  Grid.ColumnSpan="2"
-                  x:Name="lvEntries"
-                  Width="50" SelectionMode="Multiple"/>
     </Grid>
+
 </Window>
