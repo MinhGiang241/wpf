@@ -27,17 +27,90 @@
                 BorderBrush="#3A4149"
                 BorderThickness="5"
                 CornerRadius="8,8,0,8"/>
-        
-        
+
+
         <!-- Reponsive layout-->
         <ContentControl Content="{Binding}">
             <ContentControl.Style>
                 <Style TargetType="ContentControl">
+                    <!-- Default Layout-->
                     <Setter Property="ContentTemplate"
-                               Value="{StaticResource Laptop_layout}"/>
+                               Value="{StaticResource Laptop_Layout}"/>
+
+                    <Style.Triggers>
+
+                        <!-- Desktop layout (Width > 1400px ) -->
+                        <DataTrigger Binding="{Binding Path=ActualWidth, RelativeSource= {RelativeSource AncestorType=Window},
+                            Converter={x:Static local:IsGreaterThanConverter.Insatance}, ConverterParameter=1400}" Value="True">
+
+                            <Setter Property="ContentTemplate"
+                                    Value="{StaticResource Desktop_Layout}"/>
+
+                        </DataTrigger>
+                        <!-- Tablet Landscape Layout // (Width < 1200px) -->
+                        <DataTrigger Binding="{Binding Path=ActualWidth, RelativeSource= {RelativeSource AncestorType=Window},
+                            Converter={x:Static local:IsLessThanConverter.Insatance}, ConverterParameter=1200}" Value="True">
+
+                            <Setter Property="ContentTemplate"
+                                    Value="{StaticResource Tablet_Landscape_Layout}"/>
+
+                        </DataTrigger>
+
+                        <!-- Tablet Portrait Layout // (Width < 1024px) -->
+                        <DataTrigger Binding="{Binding Path=ActualWidth, RelativeSource= {RelativeSource AncestorType=Window},
+                            Converter={x:Static local:IsLessThanConverter.Insatance}, ConverterParameter=1240}" Value="True">
+
+                            <Setter Property="ContentTemplate"
+                                    Value="{StaticResource Tablet_Portrait_Layout}"/>
+
+                        </DataTrigger>
+
+                        <!-- Mobile Lanscape Layout // (Width < 812px) -->
+                        <DataTrigger Binding="{Binding Path=ActualWidth, RelativeSource= {RelativeSource AncestorType=Window},
+                            Converter={x:Static local:IsLessThanConverter.Insatance}, ConverterParameter=812}" Value="True">
+
+                            <Setter Property="ContentTemplate"
+                                    Value="{StaticResource Mobile_Landscape_Layout}"/>
+
+                        </DataTrigger>
+
+                        <!-- Mobile Potrait Layout // (Width < 667px) -->
+                        <DataTrigger Binding="{Binding Path=ActualWidth, RelativeSource= {RelativeSource AncestorType=Window},
+                            Converter={x:Static local:IsLessThanConverter.Insatance}, ConverterParameter=667}" Value="True">
+
+                            <Setter Property="ContentTemplate"
+                                    Value="{StaticResource Mobile_Portrait_Layout}"/>
+
+                        </DataTrigger>
+
+
+
+                    </Style.Triggers>
                 </Style>
             </ContentControl.Style>
         </ContentControl>
+
+        <!-- Side Menu [ For Tablet , Mobile Layouts ] -->
+        <!--<ContentControl Content="{Binding}"
+                        Visibility="{Binding IsPanelVisible, Converter={StaticResource BooleanTOVisibility}}">
+
+            <ContentControl.Style>
+
+                <Style TargetType="ContentControl">
+
+                    <Setter Property="ContentTemplate"
+                            Value="{StaticResource MenuTemplate}" />
+
+                </Style>
+
+            </ContentControl.Style>
+
+        </ContentControl>-->
+
+        <!-- Close App Button -->
+        <Button Command="{Binding CloseAppCommand}"
+                CommandParameter="{Binding ElementName=ResponsiveWindow}"
+                Style="{StaticResource CloseAppStyle}"/>
 
 
     </Grid>
